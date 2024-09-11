@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⋆˚다영에게✿˖°</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    
+    <meta property="og:title" content="⋆˚다영에게✿˖°">
+    <meta property="og:description" content="다영이만 볼 수 있음 🔒">
+    <meta property="og:image" content="https://meongz2ro.github.io/143letter/images/thumbnail.jpg">
+    <meta property="og:url" content="https://meongz2ro.github.io/143letter/">
+</head>
+<body>
+    <main>
+        <div class="bg">
+            <div class="bubble">
+                <img src="./images/bubble.svg" alt="말풍선">
+                <p id="typing">
+                    
+                </p>
+            </div>
+            <!-- 이름 -->
+            <div class="name">
+                <img src="./images/name.svg" alt="이름">
+                <p>하영</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const typing = "널 만난 건 내게 큰 행운이야.<br>...앞으로도 사이좋게 지내자!";
+        const speed = 100;
+        let i = 0;
+      
+        function typeWriter() {
+          if (i < typing.length) {
+            if (typing.substring(i, i + 4) === "<br>") {
+              document.getElementById("typing").innerHTML += "<br>"; // 줄바꿈 적용
+              i += 4; // <br>의 길이만큼 i를 증가시켜 건너뜀
+            } else {
+              document.getElementById("typing").innerHTML += typing.charAt(i); // 일반 문자 추가
+              i++;
+            }
+            setTimeout(typeWriter, speed);
+          }
+        }
+      
+        typeWriter();
+    </script>
+</body>
+</html>
